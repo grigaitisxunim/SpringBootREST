@@ -1,4 +1,4 @@
-package com.xxunim.cursomc.domain;
+package com.xxunim.SpringBootREST.domain;
 
 import java.io.Serializable;
 import java.util.Objects;

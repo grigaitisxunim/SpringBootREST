@@ -1,12 +1,12 @@
-package com.xxunim.cursomc.services;
+package com.xxunim.SpringBootREST.services;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.xxunim.cursomc.domain.Categoria;
-import com.xxunim.cursomc.repositories.CategoriaRepository;
+import com.xxunim.SpringBootREST.domain.Categoria;
+import com.xxunim.SpringBootREST.repositories.CategoriaRepository;
 
 @Service
 public class CategoriaService {

@@ -1,4 +1,4 @@
-package com.xxunim.cursomc.resources;
+package com.xxunim.SpringBootREST.resources;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.xxunim.cursomc.domain.Categoria;
-import com.xxunim.cursomc.services.CategoriaService;
+import com.xxunim.SpringBootREST.domain.Categoria;
+import com.xxunim.SpringBootREST.services.CategoriaService;
 
 @RestController
 @RequestMapping(value="/categorias")

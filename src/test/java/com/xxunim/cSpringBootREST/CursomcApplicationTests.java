@@ -1,4 +1,4 @@
-package com.xxunim.cursomc;
+package com.xxunim.cSpringBootREST;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
