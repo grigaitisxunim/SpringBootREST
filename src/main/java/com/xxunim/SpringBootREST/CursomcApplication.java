@@ -10,10 +10,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.xxunim.SpringBootREST.domain.Categoria;
 import com.xxunim.SpringBootREST.domain.Cidade;
+import com.xxunim.SpringBootREST.domain.Cliente;
+import com.xxunim.SpringBootREST.domain.Endereco;
 import com.xxunim.SpringBootREST.domain.Estado;
 import com.xxunim.SpringBootREST.domain.Produto;
+import com.xxunim.SpringBootREST.domain.enums.TipoCliente;
 import com.xxunim.SpringBootREST.repositories.CategoriaRepository;
 import com.xxunim.SpringBootREST.repositories.CidadeRepository;
+import com.xxunim.SpringBootREST.repositories.ClienteRepository;
+import com.xxunim.SpringBootREST.repositories.EnderecoRepository;
 import com.xxunim.SpringBootREST.repositories.EstadoRepository;
 import com.xxunim.SpringBootREST.repositories.ProdutoRepository;
 
@@ -28,6 +33,10 @@ public class CursomcApplication implements CommandLineRunner {
 	private EstadoRepository estadoRepository;
 	@Autowired
 	private CidadeRepository cidadeRepository;
+	@Autowired
+	private ClienteRepository clienteRepository;
+	@Autowired
+	private EnderecoRepository enderecoRepository;
 	
 
 	public static void main(String[] args) {
@@ -66,6 +75,18 @@ public class CursomcApplication implements CommandLineRunner {
 		
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
+		
+		Cliente cli1 = new Cliente(null, "Maria Silva", "maria@gmail.com", "45687596565", TipoCliente.PESSOAFISICA);
+		cli1.getTelefones().addAll(Arrays.asList("39757340", "961553505"));
+		
+		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 303", "Jardim", "02801000",cli1, c1);
+		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "sala 800", "Centro", "02807040", cli1, c2);
+		
+		cli1.getEnderecos().addAll(Arrays.asList(e1, e2));
+		
+		clienteRepository.saveAll(Arrays.asList(cli1));
+		enderecoRepository.saveAll(Arrays.asList(e1, e2));
+				
 		
 		
 	}
